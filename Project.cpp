@@ -1,5 +1,47 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+
+int main() 
+{
+    std::fstream inFile,outFile;
+    std::string inputfile,outputfile;
+    std::string line;
+    std::vector<std::string> linesin,linesout;
+    int InputNum;
+    inFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    outFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    std::cout << "Enter the input file name to open: ";
+    std::cin >> inputfile;
+    std::cout << "Enter the output file name to open: ";
+    std::cin >> outputfile;
+    inFile.open(inputfile.c_str(), std::fstream::in);
+    outFile.open(outputfile.c_str(), std::fstream::in);
+    int count = 0;
+    if (inFile.is_open() == false) {
+        std::cout << "ERROR: not able to open" << inputfile << std::endl;}
+    else {
+        while(!inFile.eof()){
+            getline(inFile, line);
+            linesin.push_back(line);
+            std::cout << "Input = " << line << std::endl;
+        }
+    }
+    if (outFile.is_open() == false) {
+        std::cout << "ERROR: not able to open " << outputfile << std::endl;}
+    else {
+        while(!outFile.eof()){
+            getline(outFile, line);
+            linesout.push_back(line);
+            std::cout << "Output = " << line << std::endl;
+        }
+    }
+    for(int i=0;i<linesin.size();i++){
+        for(int j=0;j<linesin[i].size();j++){
+    }
+}
 
 float OR(float x,float y){
     {
