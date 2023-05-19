@@ -3,6 +3,71 @@
 #include <string>
 #include <vector>
 
+float * OR(float x,float y){
+    {
+        float p=(x+y-x*y);
+		float sa = p*(1-p);
+        float output[2];
+		std::cout<<"Probability is "<<p<<std::endl;
+        std::cout<<"Switching Activity is "<<sa<<std::endl;
+        output[0] = p;
+        output[1] = sa;
+        return output;
+    }
+};
+
+float * AND(float x,float y){
+    {
+        float p=(x*y);
+		float sa = p*(1-p);
+        float output[2];
+		std::cout<<"Probability is "<<p<<std::endl;
+        std::cout<<"Switching Activity is "<<sa<<std::endl;
+        output[0] = p;
+        output[1] = sa;
+        return output;
+    }
+};
+
+float * NAND(float x,float y){
+    {
+        float p=(1-x*y);
+		float sa = p*(1-p);
+        float output[2];
+		std::cout<<"Probability is "<<p<<std::endl;
+        std::cout<<"Switching Activity is "<<sa<<std::endl;
+        output[0] = p;
+        output[1] = sa;
+        return output;
+    }
+};
+
+float * NOR(float x,float y){
+    {
+        float p;
+        p=((1-x)*(1-y));
+		float sa = p*(1-p);
+        float output[2];
+		std::cout<<"Probability is "<<p<<std::endl;
+        std::cout<<"Switching Activity is "<<sa<<std::endl;
+        output[0] = p;
+        output[1] = sa;
+        return output;
+    }
+};
+
+float * NOT(float x){
+    {
+        float p=(1-x);
+		float sa = p*(1-p);
+        float output[2];
+		std::cout<<"Probability is "<<p<<std::endl;
+        std::cout<<"Switching Activity is "<<sa<<std::endl;
+        output[0] = p;
+        output[1] = sa;
+        return output;
+    }
+};
 
 int main() 
 {
@@ -19,7 +84,8 @@ int main()
     std::cin >> outputfile;
     inFile.open(inputfile.c_str(), std::fstream::in);
     outFile.open(outputfile.c_str(), std::fstream::in);
-    int count = 0;
+    int count1 = 0;
+    int count0 = 0;
     if (inFile.is_open() == false) {
         std::cout << "ERROR: not able to open" << inputfile << std::endl;}
     else {
@@ -38,64 +104,12 @@ int main()
             std::cout << "Output = " << line << std::endl;
         }
     }
-    for(int i=0;i<linesin.size();i++){
-        for(int j=0;j<linesin[i].size();j++){
+    while(linesout[count1][0] == 1){
+        count1++;
     }
-}
-
-float OR(float x,float y){
-    {
-        float p=(x+y-x*y);
-		float sa = p*(1-p);
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        return p;
-    }
-};
-
-float AND(float x,float y){
-    {
-        float p=(x*y);
-		float sa = p*(1-p);
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        return sa;
-    }
-};
-
-float NAND(float x,float y){
-    {
-        float p=(1-x*y);
-		float sa = p*(1-p);
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        return sa;
-    }
-};
-
-float NOR(float x,float y){
-    {
-        float p;
-        p=((1-x)*(1-y));
-		float sa = p*(1-p);
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        return sa;
-    }
-};
-
-float NOT(float x){
-    {
-        float p=(1-x);
-		float sa = p*(1-p);
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        return sa;
-    }
-};
 
 
-int main() {
+/* int main() {
 	int choise;
 	float x,y;
 	std::cout<<"Gate choise:";
@@ -131,4 +145,4 @@ int main() {
 	std::cin>>choise;
 	}
 	while(choise!=0);
-};
+}; */
