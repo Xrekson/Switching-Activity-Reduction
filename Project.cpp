@@ -117,7 +117,7 @@ int main()
         }
         n++;
     }
-    std::vector<int> input[]
+    std::vector<int> numbers[linesout[0].length()-1];
     for(int i=0;i<linesout[0].length()-1;i++)
     {
         std::cout<<"Output for f"<< i <<std::endl;
@@ -126,7 +126,12 @@ int main()
     }
     for(int i = 0;i<linesin.size();i++){
         for(int j=0;j<linesin[i].length();j++){
-            if(linesin[i][j]=='1')
+            if(linesin[i][j]=='1'){
+                numbers[i].push_back(j);
+            }else if(linesin[i][j]=='0'){
+                int l=0-j;
+                numbers[i].push_back(l);
+            }
         }
     }
 
