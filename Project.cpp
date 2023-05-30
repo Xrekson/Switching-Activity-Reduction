@@ -1,70 +1,72 @@
 #include <iostream>
 #include <fstream>
+#include <iterator>
 #include <string>
+#include <algorithm>
 #include <vector>
 
-float * OR(float x,float y){
+std::vector<float> OR(float x,float y){
     {
         float p=(x+y-x*y);
 		float sa = p*(1-p);
-        float output[2];
+        std::vector<float> output;
 		std::cout<<"Probability is "<<p<<std::endl;
         std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output[0] = p;
-        output[1] = sa;
+        output.push_back(p);
+        output.push_back(sa);
         return output;
     }
 };
 
-float * AND(float x,float y){
+std::vector<float> AND(float x,float y){
     {
         float p=(x*y);
 		float sa = p*(1-p);
-        float output[2];
+        std::vector<float> output;
 		std::cout<<"Probability is "<<p<<std::endl;
         std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output[0] = p;
-        output[1] = sa;
+        output.push_back(p);
+        output.push_back(sa);
         return output;
     }
 };
 
-float * NAND(float x,float y){
+std::vector<float> NAND(float x,float y){
     {
         float p=(1-x*y);
 		float sa = p*(1-p);
-        float output[2];
+        std::vector<float> output;
 		std::cout<<"Probability is "<<p<<std::endl;
         std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output[0] = p;
-        output[1] = sa;
+        output.push_back(p);
+        output.push_back(sa);
         return output;
     }
 };
 
-float * NOR(float x,float y){
+std::vector<float> NOR(float x,float y){
     {
         float p;
         p=((1-x)*(1-y));
 		float sa = p*(1-p);
-        float output[2];
+        std::vector<float> output;
 		std::cout<<"Probability is "<<p<<std::endl;
         std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output[0] = p;
-        output[1] = sa;
+        output.push_back(p);
+        output.push_back(sa);
         return output;
     }
 };
 
-float * NOT(float x){
+std::vector<float> NOT(float x){
     {
         float p=(1-x);
 		float sa = p*(1-p);
-        float output[2];
+        std::vector<float> output;
 		std::cout<<"Probability is "<<p<<std::endl;
         std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output[0] = p;
-        output[1] = sa;
+        output.push_back(p);
+        output.push_back(sa);
         return output;
     }
 };
@@ -78,14 +80,13 @@ int main()
     int InputNum;
     inFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     outFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    std::cout << "Enter the input file name to open: ";
-    std::cin >> inputfile;
-    std::cout << "Enter the output file name to open: ";
-    std::cin >> outputfile;
+    inputfile = "input1.txt";outputfile = "output1.txt";
+    //std::cout << "Enter the input file name to open: ";
+    //std::cin >> inputfile;
+    //std::cout << "Enter the output file name to open: ";
+    //std::cin >> outputfile;
     inFile.open(inputfile.c_str(), std::fstream::in);
     outFile.open(outputfile.c_str(), std::fstream::in);
-    int count1 = 0;
-    int count0 = 0;
     if (inFile.is_open() == false) {
         std::cout << "ERROR: not able to open" << inputfile << std::endl;}
     else {
@@ -104,11 +105,32 @@ int main()
             std::cout << "Output = " << line << std::endl;
         }
     }
-    while(linesout[count1][0] == 1){
-        count1++;
+    std::vector<int> output1[linesout[0].length()-1];
+    std::cout<< linesout.size() << std::endl;
+    std::cout<< linesout[0].length() << std::endl;
+    int n=0;
+    while(n!=2){
+        for(int i=0;i<linesout.size();i++){
+            if(linesout[i][n]=='1'){
+                output1[n].push_back(i);
+            }
+        }
+        n++;
+    }
+    std::vector<int> input[]
+    for(int i=0;i<linesout[0].length()-1;i++)
+    {
+        std::cout<<"Output for f"<< i <<std::endl;
+        for (auto j = output1[i].begin(); j != output1[i].end(); ++j)
+        std::cout << *j << " " << std::endl;
+    }
+    for(int i = 0;i<linesin.size();i++){
+        for(int j=0;j<linesin[i].length();j++){
+            if(linesin[i][j]=='1')
+        }
     }
 
-
+};
 /* int main() {
 	int choise;
 	float x,y;
