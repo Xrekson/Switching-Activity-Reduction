@@ -5,69 +5,39 @@
 #include <algorithm>
 #include <vector>
 
-std::vector<float> OR(float x,float y){
+long double OR(long double x,long double y){
     {
-        float p=(x+y-x*y);
-		float sa = p*(1-p);
-        std::vector<float> output;
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output.push_back(p);
-        output.push_back(sa);
-        return output;
+        long double p=(x+y-x*y);
+        return p;
     }
 };
 
-std::vector<float> AND(float x,float y){
+long double AND(long double x,long double y){
     {
-        float p=(x*y);
-		float sa = p*(1-p);
-        std::vector<float> output;
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output.push_back(p);
-        output.push_back(sa);
-        return output;
+        long double p=(x*y);
+        return p;
     }
 };
 
-std::vector<float> NAND(float x,float y){
+long double NAND(long double x,long double y){
     {
-        float p=(1-x*y);
-		float sa = p*(1-p);
-        std::vector<float> output;
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output.push_back(p);
-        output.push_back(sa);
-        return output;
+        long double p=(1-x*y);
+        return p;
     }
 };
 
-std::vector<float> NOR(float x,float y){
+long double NOR(long double x,long double y){
     {
-        float p;
+        long double p;
         p=((1-x)*(1-y));
-		float sa = p*(1-p);
-        std::vector<float> output;
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output.push_back(p);
-        output.push_back(sa);
-        return output;
+        return p;
     }
 };
 
-std::vector<float> NOT(float x){
+long double NOT(long double x){
     {
-        float p=(1-x);
-		float sa = p*(1-p);
-        std::vector<float> output;
-		std::cout<<"Probability is "<<p<<std::endl;
-        std::cout<<"Switching Activity is "<<sa<<std::endl;
-        output.push_back(p);
-        output.push_back(sa);
-        return output;
+        long double p=(1-x);
+        return p;
     }
 };
 
@@ -76,11 +46,14 @@ int main()
     std::fstream inFile,outFile;
     std::string inputfile,outputfile;
     std::string line;
+    std::vector<int> number;
+    std::vector<std::vector<int>> drain;
+    std::vector<std::vector<std::vector<int>>> merge;
     std::vector<std::string> linesin,linesout;
-    int InputNum;
+    int InputNum=0;
     inFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     outFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    inputfile = "input1.txt";outputfile = "output1.txt";
+    inputfile = "input2.txt";outputfile = "output2.txt";
     //std::cout << "Enter the input file name to open: ";
     //std::cin >> inputfile;
     //std::cout << "Enter the output file name to open: ";
@@ -93,7 +66,6 @@ int main()
         while(!inFile.eof()){
             getline(inFile, line);
             linesin.push_back(line);
-            std::cout << "Input = " << line << std::endl;
         }
     }
     if (outFile.is_open() == false) {
@@ -102,43 +74,70 @@ int main()
         while(!outFile.eof()){
             getline(outFile, line);
             linesout.push_back(line);
-            std::cout << "Output = " << line << std::endl;
         }
     }
-    std::vector<int> output1[linesout[0].length()-1];
-    std::cout<< linesout.size() << std::endl;
-    std::cout<< linesout[0].length() << std::endl;
-    int n=0;
-    while(n!=2){
+    std::vector<std::vector<int>> output1;
+    for(int n=0;n<linesout[0].length()-1;n++){
         for(int i=0;i<linesout.size();i++){
             if(linesout[i][n]=='1'){
-                output1[n].push_back(i);
+                number.push_back(i);
             }
         }
-        n++;
+        output1.push_back(number);
+        number.clear();
     }
-    std::vector<int> numbers[linesout[0].length()-1];
-    for(int i=0;i<linesout[0].length()-1;i++)
+    for(int i=0;i<output1.size();i++)
     {
         std::cout<<"Output for f"<< i <<std::endl;
         for (auto j = output1[i].begin(); j != output1[i].end(); ++j)
         std::cout << *j << " " << std::endl;
     }
+    std::vector<std::vector<int>> numbers;
     for(int i = 0;i<linesin.size();i++){
-        for(int j=0;j<linesin[i].length();j++){
+        for(int j=0;j<linesin[0].length();j++){
             if(linesin[i][j]=='1'){
-                numbers[i].push_back(j);
+                number.push_back(j);
             }else if(linesin[i][j]=='0'){
                 int l=0-j;
-                numbers[i].push_back(l);
+                number.push_back(l);
             }
+        }
+        numbers.push_back(number);
+        number.clear();
+    }
+    for(int i=0;i<numbers.size();i++)
+    {
+        std::cout<<"Input for f"<< i <<std::endl;
+        for (auto j = numbers[i].begin(); j != numbers[i].end(); ++j)
+        std::cout << *j << " " << std::endl;
+    }
+    for(int i=0;i<output1.size();i++){
+        InputNum=0;
+        for(int j = 0;j<output1[i].size(),InputNum<numbers.size();InputNum++){
+            if(output1[i][j]==InputNum){
+                drain.push_back(numbers[InputNum]);
+                j++;
+            }
+        }
+        merge.push_back(drain);
+        drain.clear();
+    }
+    for(int i=0;i<merge.size();i++)
+    {
+        std::cout<<"Merge for f"<< i <<std::endl;
+        for (int j=0;j<merge[i].size();j++){
+            std::cout<<"Input Number "<<j<<std::endl;
+            for(auto k = merge[i][j].begin(); k != merge[i][j].end();k++){
+                std::cout<< *k <<" ";
+            }
+        std::cout<<""<<std::endl;
         }
     }
 
 };
 /* int main() {
 	int choise;
-	float x,y;
+	long double x,y;
 	std::cout<<"Gate choise:";
 	std::cout<<"1-AND, 2-OR, 3-NAND, 4-NOR, 5-NOT"<<std::endl;
 	std::cin>>choise;
