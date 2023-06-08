@@ -127,7 +127,7 @@ void SA(std::vector<std::vector<std::vector<long double>>> list){
     }
     }
     for(int i=0;i<result.size();i++){
-        std::cout<<"Switching-Activity for f"<<i<<":";
+        std::cout<<"At the end Switching-Activity for f"<<i<<":";
         for(auto k = result[i].begin(); k != result[i].end();k++){
                 std::cout<< *k <<" ";
             }
@@ -141,12 +141,13 @@ int main()
     std::fstream inFile,outFile;
     std::string inputfile,outputfile;
     std::string line;
+    long double brain;
     std::vector<int> number;
     std::vector<long double> bane;
     std::vector<std::vector<long double>> drain;
     std::vector<std::vector<std::vector<long double>>> merge;
     std::vector<std::string> linesin,linesout;
-    int InputNum=0;
+    int InputNum,notnum;
     inFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     outFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     inputfile = "input2.txt";outputfile = "output2.txt";
@@ -219,24 +220,33 @@ int main()
     }
     for(int i=0;i<merge.size();i++)
     {
+        notnum=0;
         std::cout<<"Merge for f"<< i <<std::endl;
         for (int j=0;j<merge[i].size();j++){
             std::cout<<"Input Number "<<j<<std::endl;
             for(auto k = merge[i][j].begin(); k != merge[i][j].end();k++){
                 std::cout<< *k <<" ";
+                if(*k<0){
+                    notnum++;
+                }
             }
         std::cout<<""<<std::endl;
         }
+        number.push_back(notnum);
     }
     SA(merge);
     for(int i=0;i<reden.size();i++)
     {
-        std::cout<<"Probability for f"<< i <<std::endl;
+        brain=0;
+        std::cout<<"Total Switching-Activity for f"<< i <<std::endl;
         for (int j=0;j<reden[i].size();j++){
             for(auto k = reden[i][j].begin(); k != reden[i][j].end();k++){
-                std::cout<< *k <<" ";
+                brain+=(*k)*(1-(*k));
             }
         }
+        brain+=(number[i]*0.25);
+        std::cout<<brain;
+        bane.push_back(brain);
         printf("\n");
     }
 };
