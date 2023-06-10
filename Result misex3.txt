@@ -1,0 +1,16 @@
+Switching-Activity for f0: 230.225
+Switching-Activity for f1: 227.904
+Switching-Activity for f2: 216.017
+Switching-Activity for f3: 220.789
+Switching-Activity for f4: 235.773
+Switching-Activity for f5: 198.869
+Switching-Activity for f6: 214.471
+Switching-Activity for f7: 250.034
+Switching-Activity for f8: 118.703
+Switching-Activity for f9: 233.841
+Switching-Activity for f10: 24.9362
+Switching-Activity for f11: 21.6862
+Switching-Activity for f12: 43.0797
+Switching-Activity for f13: 497.063
+Total Switching-Activity for misex3 :2733.39
+Time measured:13.49 seconds.

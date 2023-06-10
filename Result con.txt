@@ -1,0 +1,4 @@
+Switching-Activity for f0: 2.5482
+Switching-Activity for f1: 4.09779
+Total Switching-Activity for con :6.64598
+Time measured:14.64 seconds.

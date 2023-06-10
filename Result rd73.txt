@@ -1,0 +1,8 @@
+Switching-Activity for f0: 2.40431
+Switching-Activity for f1: 18.7574
+Switching-Activity for f2: 11.4729
+Switching-Activity for f3: -358370
+Switching-Activity for f4: 94.2249
+Switching-Activity for f5: 23.279
+Total Switching-Activity for rd73 :-358220
+Time measured:0.001 seconds.

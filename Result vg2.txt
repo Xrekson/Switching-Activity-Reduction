@@ -1,0 +1,10 @@
+Switching-Activity for f0: 11.0968
+Switching-Activity for f1: 24.6669
+Switching-Activity for f2: 3.59684
+Switching-Activity for f3: 15.9481
+Switching-Activity for f4: 46.7809
+Switching-Activity for f5: 3.91375
+Switching-Activity for f6: 33.3112
+Switching-Activity for f7: 3.88879
+Total Switching-Activity for vg2 :143.203
+Time measured:13.9 seconds.

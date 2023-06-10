@@ -1,0 +1,9 @@
+Switching-Activity for f0: 1.56737
+Switching-Activity for f1: 5.21399
+Switching-Activity for f2: 5.99512
+Switching-Activity for f3: 4.86468
+Switching-Activity for f4: 4.93366
+Switching-Activity for f5: 6.09226
+Switching-Activity for f6: 5.21399
+Total Switching-Activity for misex :33.8811
+Time measured:15.634 seconds.

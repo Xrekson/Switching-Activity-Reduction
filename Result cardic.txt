@@ -1,0 +1,4 @@
+Switching-Activity for f0: 182.806
+Switching-Activity for f1: 2822.22
+Total Switching-Activity for cardic :3005.03
+Time measured:0.019 seconds.

@@ -1,0 +1,3 @@
+Switching-Activity for f0: 18.7574
+Total Switching-Activity for xor5 :18.7574
+Time measured:12.728 seconds.

@@ -1,0 +1,6 @@
+Switching-Activity for f0: 17.2505
+Switching-Activity for f1: 33.5139
+Switching-Activity for f2: 32.9608
+Switching-Activity for f3: 42.7061
+Total Switching-Activity for saa2 :126.431
+Time measured:13.643 seconds.

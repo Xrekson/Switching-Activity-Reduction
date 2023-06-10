@@ -1,0 +1,10 @@
+Switching-Activity for f0: 8.01275
+Switching-Activity for f1: 30.0603
+Switching-Activity for f2: 49.8725
+Switching-Activity for f3: 172.862
+Switching-Activity for f4: 479.894
+Switching-Activity for f5: 220.647
+Switching-Activity for f6: 97.5695
+Switching-Activity for f7: 542.281
+Total Switching-Activity for alu4 :1601.2
+Time measured:10.074 seconds.

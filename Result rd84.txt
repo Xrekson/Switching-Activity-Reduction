@@ -1,0 +1,6 @@
+Switching-Activity for f0: 195.59
+Switching-Activity for f1: 200.787
+Switching-Activity for f2: 0.412766
+Switching-Activity for f3: 223.156
+Total Switching-Activity for rd84 :619.945
+Time measured:17.398 seconds.

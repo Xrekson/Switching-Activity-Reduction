@@ -1,0 +1,20 @@
+Switching-Activity for f0: 2.16277
+Switching-Activity for f1: 1.91277
+Switching-Activity for f2: 2.16277
+Switching-Activity for f3: 2.33277
+Switching-Activity for f4: 1.15887
+Switching-Activity for f5: 0.385742
+Switching-Activity for f6: 0.651123
+Switching-Activity for f7: 1.56744
+Switching-Activity for f8: 2.41642
+Switching-Activity for f9: 4.33329
+Switching-Activity for f10: 3.33329
+Switching-Activity for f11: 3.83329
+Switching-Activity for f12: 6.03131
+Switching-Activity for f13: 1.38574
+Switching-Activity for f14: 2.41277
+Switching-Activity for f15: 2.25133
+Switching-Activity for f16: 0.4375
+Switching-Activity for f17: 0.796875
+Total Switching-Activity for misex2 :39.5661
+Time measured:20.231 seconds.

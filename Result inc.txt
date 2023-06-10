@@ -1,0 +1,11 @@
+Switching-Activity for f0: 13.693
+Switching-Activity for f1: 16.7545
+Switching-Activity for f2: 23.5401
+Switching-Activity for f3: 18.3284
+Switching-Activity for f4: 22.9147
+Switching-Activity for f5: 4.78834
+Switching-Activity for f6: 6.98496
+Switching-Activity for f7: 5.03049
+Switching-Activity for f8: 14.4227
+Total Switching-Activity for inc :126.457
+Time measured:0.01 seconds.

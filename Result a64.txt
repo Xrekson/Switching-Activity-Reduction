@@ -1,0 +1,3 @@
+Switching-Activity for f0: 13.7143
+Total Switching-Activity for a64 :13.7143
+Time measured:11.947 seconds.

@@ -1,0 +1,7 @@
+Switching-Activity for f0: 25.3197
+Switching-Activity for f1: 57.1407
+Switching-Activity for f2: 58.9876
+Switching-Activity for f3: 47.7264
+Switching-Activity for f4: 23.9114
+Total Switching-Activity for clip :213.086
+Time measured:9.172 seconds.

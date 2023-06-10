@@ -1,0 +1,3 @@
+Switching-Activity for f0: 117.891
+Total Switching-Activity for 9sym :117.891
+Time measured:12.199 seconds.

@@ -1,0 +1,5 @@
+Switching-Activity for f0: 2.40431
+Switching-Activity for f1: 18.7574
+Switching-Activity for f2: 11.4729
+Total Switching-Activity for rd53 :32.6346
+Time measured:0 seconds.
